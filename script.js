@@ -4,47 +4,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const journalText = document.getElementById('journal-text');
     const entriesContainer = document.getElementById('entries-container');
 
-    // Load saved entries from localStorage
-    loadEntries();
+    // Predefined journal entries
+    const predefinedEntries = [
+        "Today was a wonderful day! I went for a walk in the park and enjoyed the fresh air.",
+        "Started a new book today. It's a mystery novel and I'm already hooked!",
+        "Had a productive workday, managed to finish all my tasks ahead of time.",
+        "Spent the evening cooking a new recipe, and it turned out delicious!"
+    ];
+
+    // Load predefined entries
+    predefinedEntries.forEach(entryText => {
+        createEntry(entryText);
+    });
 
     saveButton.addEventListener('click', function() {
         const text = journalText.value.trim();
         if (text !== '') {
-            saveEntry(text);
+            createEntry(text);
             journalText.value = '';
         }
     });
 
-    function saveEntry(text) {
-        // Create a new entry element
+    function createEntry(text) {
         const entry = document.createElement('div');
         entry.classList.add('entry');
         entry.textContent = text;
-
-        // Add the entry to the container
         entriesContainer.appendChild(entry);
-
-        // Save entry to localStorage
-        saveToLocalStorage(text);
-    }
-
-    function saveToLocalStorage(text) {
-        let entries = localStorage.getItem('journalEntries');
-        entries = entries ? JSON.parse(entries) : [];
-        entries.push(text);
-        localStorage.setItem('journalEntries', JSON.stringify(entries));
-    }
-
-    function loadEntries() {
-        let entries = localStorage.getItem('journalEntries');
-        if (entries) {
-            entries = JSON.parse(entries);
-            entries.forEach(entryText => {
-                const entry = document.createElement('div');
-                entry.classList.add('entry');
-                entry.textContent = entryText;
-                entriesContainer.appendChild(entry);
-            });
-        }
     }
 });
