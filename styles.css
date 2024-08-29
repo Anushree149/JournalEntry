@@ -17,6 +17,7 @@ body {
 
 h1 {
     text-align: center;
+    color: #7a4c88; /* Dark lilac for the header text */
 }
 
 textarea {
@@ -26,7 +27,8 @@ textarea {
     font-size: 16px;
     margin-bottom: 10px;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #d1c4e9; /* Light lilac for the textarea border */
+    background-color: #f3e5f5; /* Very light lilac for the textarea background */
 }
 
 button {
@@ -34,7 +36,7 @@ button {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #ba68c8; /* Lilac button color */
     color: white;
     border: none;
     border-radius: 4px;
@@ -43,17 +45,19 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #8e44ad; /* Darker lilac on hover */
 }
 
 #entries-container {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #d1c4e9; /* Light lilac border color */
     padding-top: 20px;
 }
 
 .entry {
-    background-color: #f1f1f1;
+    background-color: #f3e5f5; /* Very light lilac background for entries */
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 10px;
+    border: 1px solid #d1c4e9; /* Light lilac border for entries */
+    color: #7a4c88; /* Dark lilac text color */
 }
